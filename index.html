@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Galaxy Tab | Preços e histórico</title>
+<style>
+:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#172033;background:#f4f7fb}*{box-sizing:border-box}body{margin:0}main{max-width:1160px;margin:auto;padding:30px 18px 60px}h1{margin:0 0 7px;font-size:30px}h2{font-size:20px;margin:0 0 14px}p{line-height:1.55;color:#516075}.muted{font-size:13px;color:#66758b}.card{background:white;border:1px solid #dfe6ef;border-radius:15px;padding:22px;margin-top:18px;box-shadow:0 2px 8px #15233b08}.controls{display:flex;gap:12px;flex-wrap:wrap;align-items:center}select{border:1px solid #cbd5e1;border-radius:8px;padding:9px;background:white;max-width:100%}svg{width:100%;height:auto;display:block}table{border-collapse:collapse;width:100%;font-size:14px}td,th{padding:10px;border-bottom:1px solid #e6ebf1;text-align:left;vertical-align:top}th{color:#516075}a{color:#1459a4;text-decoration:underline;text-underline-offset:2px}a:hover{color:#093a76}.scroll{overflow-x:auto}.dot{cursor:pointer;outline:none}.dot:hover,.dot:focus{stroke:#111827;stroke-width:3}.tip{background:#edf4ff;padding:10px 12px;border-radius:8px;margin-top:8px;min-height:44px}.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px}.pill{background:#e8f0fc;color:#174b8b;padding:5px 10px;border-radius:99px} .empty{padding:50px;text-align:center;color:#66758b}@media(max-width:700px){main{padding:18px 10px}.card{padding:14px}h1{font-size:25px}}
+</style></head><body><main>
+<h1>Galaxy Tab · Painel de preços</h1><p>Histórico de preços com fontes rastreáveis. <strong>Clique em qualquer ponto</strong> para abrir a referência da loja ou comparador em uma nova aba.</p>
+<div class="controls"><label>Modelo / capacidade <select id="sku"><option value="">Todos os modelos</option></select></label><span class="pill">Alerta S11: abaixo de R$ 3.800</span></div>
+<section class="card"><h2>Ofertas observadas por loja</h2><p class="muted">Cada ponto representa um anúncio observado. Preços preliminares não são preços finais garantidos.</p><div id="offersGraph"></div><div id="offersTip" class="tip">Selecione um ponto para ver loja, data e preço; clique para abrir a fonte.</div></section>
+<section class="card"><h2>Histórico externo</h2><p class="muted">Pontos isolados de fontes históricas; não representam uma série contínua. Algumas fontes são comparadores, não anúncios diretos da loja.</p><div id="externalGraph"></div><div id="externalTip" class="tip">Passe o mouse ou toque em um ponto para identificar a fonte. Clique para abrir.</div></section>
+<section class="card"><h2>Histórico próprio: mínimo, média e máximo</h2><p class="muted">Faixa entre mínimo e máximo, com média central. Somente amostras verificadas e comparáveis.</p><div id="summaryGraph"></div><div id="summaryTip" class="tip">Clique nos pontos para ver os links das ofertas que compõem a amostra.</div></section>
+<section class="card"><h2>Fontes e ofertas</h2><div class="scroll"><table><thead><tr><th>Data</th><th>Modelo</th><th>Fonte</th><th>Preço</th><th>Condição</th></tr></thead><tbody id="sourceRows"></tbody></table></div></section>
+<p class="muted" id="updated"></p><p class="muted">Dados de preços podem mudar. Verifique frete, estoque, garantia, pagamento e elegibilidade de cashback no destino. Este painel não realiza compras.</p>
+</main><script>
+const colors=['#1762b5','#11866c','#8d4eb3','#c27625','#b6537a','#62758d'];
+const $=id=>document.getElementById(id);
+const money=v=>Number.isFinite(+v)?new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(+v):'—';
+const sku=r=>[r.model,r.capacity_gb+' GB',r.connectivity].join(' · ');
+const clean=s=>String(s??'');
+let DATA={offers:[],external:[],summaries:[],updated:''};
+function el(tag,attrs={},text){const x=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const [k,v] of Object.entries(attrs))x.setAttribute(k,v);if(text!==undefined)x.textContent=text;return x}
+function draw(target,tipId,rows,type){
+ const box=$(target);box.replaceChildren();const valid=rows.filter(r=>Number.isFinite(+r.value)&&r.date),selection=$('sku').value,shown=valid.filter(r=>!selection||r.sku===selection);
+ if(!shown.length){const p=document.createElement('div');p.className='empty';p.textContent='Ainda não há pontos para este filtro.';box.append(p);return}
+ const W=1000,H=400,left=90,right=955,top=35,bottom=340,dates=[...new Set(shown.map(r=>r.date))].sort(),nums=shown.flatMap(r=>[+r.value,...(r.low!==undefined?[+r.low,+r.high]:[])]),lo=Math.min(3800,...nums)*.91,hi=Math.max(3800,...nums)*1.08;
+ const x=d=>dates.length===1?(left+right)/2:left+(right-left)*dates.indexOf(d)/(dates.length-1),y=v=>bottom-(+v-lo)/(hi-lo)*(bottom-top);
+ const svg=el('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'Gráfico de preços com pontos clicáveis'});
+ for(let j=0;j<=4;j++){const v=lo+(hi-lo)*j/4,Y=y(v);svg.append(el('line',{x1:left,x2:right,y1:Y,y2:Y,stroke:'#e5eaf1'}),el('text',{x:left-8,y:Y+4,'text-anchor':'end',fill:'#64748b','font-size':12},Math.round(v).toLocaleString('pt-BR')))}
+ svg.append(el('line',{x1:left,x2:right,y1:y(3800),y2:y(3800),stroke:'#c44a52','stroke-dasharray':'6 5','stroke-width':2}),el('text',{x:right,y:y(3800)-7,'text-anchor':'end',fill:'#b7353d','font-size':12},'R$ 3.800'));
+ const groups=[...new Set(shown.map(r=>r.sku))].sort();
+ groups.forEach((name,i)=>{
+ const color=colors[i%colors.length],points=shown.filter(r=>r.sku===name).sort((a,b)=>a.date.localeCompare(b.date));
+ if(type==='summary'&&points.length>1){
+ const poly=el('polygon',{points:points.map(p=>x(p.date)+','+y(p.high)).concat([...points].reverse().map(p=>x(p.date)+','+y(p.low))).join(' '),fill:color,opacity:.13});svg.append(poly);
+ svg.append(el('polyline',{points:points.map(p=>x(p.date)+','+y(p.value)).join(' '),fill:'none',stroke:color,'stroke-width':3}));
+ }
+ points.forEach(p=>{
+ const circle=el('circle',{cx:x(p.date),cy:y(p.value),r:7,fill:color,tabindex:0,role:'link','aria-label':name+' '+money(p.value)+' abrir fonte',class:'dot'});
+ circle.append(el('title',{},[name,p.date,p.store||'',money(p.value),'Clique para abrir fonte'].join(' | ')));
+ const msg=()=>{const tip=$(tipId);tip.replaceChildren();const strong=document.createElement('strong');strong.textContent=name+' — '+money(p.value);tip.append(strong,document.createTextNode(' · '+p.date+' · '+(p.store||'')));const links=p.urls||[p.url].filter(Boolean);for(const u of links){if(!/^https:\/\//.test(u))continue;const a=document.createElement('a');a.href=u;a.target='_blank';a.rel='noopener noreferrer';a.textContent=' Abrir fonte ↗';tip.append(document.createTextNode(' · '),a)}};
+ const open=()=>{msg();const u=(p.urls||[p.url]).find(u=>/^https:\/\//.test(u||''));if(u)window.open(u,'_blank','noopener,noreferrer')};
+ circle.addEventListener('mouseenter',msg);circle.addEventListener('focus',msg);circle.addEventListener('click',open);circle.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();open()}});svg.append(circle)
+ });
+ svg.append(el('text',{x:left,y:17,fill:color,'font-size':12},name));
+ });
+ const step=Math.max(1,Math.ceil(dates.length/6));dates.forEach((d,i)=>{if(i%step===0)svg.append(el('text',{x:x(d),y:375,'text-anchor':'middle',fill:'#64748b','font-size':11},d.slice(0,16)))});
+ box.append(svg);
+}
+function render(){
+ const filter=$('sku').value;
+ const offers=DATA.offers.filter(r=>!filter||sku(r)===filter),external=DATA.external.filter(r=>!filter||sku(r)===filter),summaries=DATA.summaries.filter(r=>!filter||sku(r)===filter);
+ draw('offersGraph','offersTip',offers.map(r=>({date:r.observed_at_brt,sku:sku(r),value:r.price_brl,store:r.store,url:r.url})),'offer');
+ draw('externalGraph','externalTip',external.map(r=>({date:r.record_date,sku:sku(r),value:r.value_brl,store:r.source,url:r.url})),'external');
+ draw('summaryGraph','summaryTip',summaries.map(r=>({date:r.observed_at_brt,sku:sku(r),value:r.mean_brl,low:r.min_brl,high:r.max_brl,store:'Média de '+r.n_offers+' ofertas',urls:DATA.offers.filter(o=>o.observed_at_brt===r.observed_at_brt&&sku(o)===sku(r)&&['verified','verified_comparable'].includes(o.verification_status)).map(o=>o.url)})),'summary');
+ const body=$('sourceRows');body.replaceChildren();
+ const records=[...offers.map(r=>({date:r.observed_at_brt,name:sku(r),store:r.store,price:r.price_brl,url:r.url,status:r.verification_status})),...external.map(r=>({date:r.record_date,name:sku(r),store:r.source,price:r.value_brl,url:r.url,status:r.verification_status}))].sort((a,b)=>b.date.localeCompare(a.date));
+ for(const r of records){const tr=document.createElement('tr');for(const v of [r.date,r.name,r.store,r.price,r.status]){const td=document.createElement('td');if(v===r.store&&/^https:\/\//.test(r.url||'')){const a=document.createElement('a');a.href=r.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=r.store;td.append(a)}else td.textContent=v===r.price?money(v):clean(v);tr.append(td)}body.append(tr)}
+ if(!records.length){const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=5;td.textContent='Nenhum registro disponível';tr.append(td);body.append(tr)}
+}
+fetch('./data.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(d=>{DATA=d;const keys=[...new Set([...d.offers,...d.external,...d.summaries].map(sku))].sort();for(const k of keys){const opt=document.createElement('option');opt.value=k;opt.textContent=k;$('sku').append(opt)}$('sku').addEventListener('change',render);$('updated').textContent='Dados gerados em: '+(d.updated||'não informado');render()}).catch(e=>{for(const id of ['offersGraph','externalGraph','summaryGraph'])$(id).textContent='Não foi possível carregar dados: '+e.message});
+</script></body></html>
