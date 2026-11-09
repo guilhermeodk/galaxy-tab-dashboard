@@ -101,8 +101,108 @@
       "source": "Primeira Solução",
       "url": "https://primeirasolucao.com.br/produto/tablet-samsung-galaxy-tab-s10-fe-wifi-128gb-8gb-tela-10-9-90hz-s-pen-e-capa-inclusas-cinza",
       "verification_status": "secondary_unverified"
+    },
+    {
+      "record_date": "2026-11-08",
+      "model": "Galaxy Tab S11",
+      "capacity_gb": "128",
+      "connectivity": "Wi-Fi",
+      "value_brl": "3660.76",
+      "source": "Nissei",
+      "url": "",
+      "verification_status": "secondary_unverified"
+    },
+    {
+      "record_date": "2026-11-08",
+      "model": "Galaxy Tab S11",
+      "capacity_gb": "128",
+      "connectivity": "Wi-Fi",
+      "value_brl": "3737.83",
+      "source": "Nissei",
+      "url": "",
+      "verification_status": "secondary_unverified"
+    },
+    {
+      "record_date": "2026-11-08",
+      "model": "Galaxy Tab S11",
+      "capacity_gb": "128",
+      "connectivity": "Wi-Fi",
+      "value_brl": "4280.23",
+      "source": "Biostech Conecta",
+      "url": "",
+      "verification_status": "secondary_unverified"
+    },
+    {
+      "record_date": "2026-11-08",
+      "model": "Galaxy Tab S11",
+      "capacity_gb": "128",
+      "connectivity": "Wi-Fi",
+      "value_brl": "4826.77",
+      "source": "Horizon Play",
+      "url": "",
+      "verification_status": "secondary_unverified"
+    },
+    {
+      "record_date": "2026-11-08",
+      "model": "Galaxy Tab S10 FE",
+      "capacity_gb": "128",
+      "connectivity": "Wi-Fi",
+      "value_brl": "2284.53",
+      "source": "Nissei",
+      "url": "",
+      "verification_status": "secondary_unverified"
+    },
+    {
+      "record_date": "2026-11-08",
+      "model": "Galaxy Tab S11",
+      "capacity_gb": "128",
+      "connectivity": "Wi-Fi",
+      "value_brl": "5526.90",
+      "source": "Carrefour / RMZ",
+      "url": "",
+      "verification_status": "secondary_unverified"
+    },
+    {
+      "record_date": "2026-11-08",
+      "model": "Galaxy Tab S11",
+      "capacity_gb": "256",
+      "connectivity": "Wi-Fi",
+      "value_brl": "5699.00",
+      "source": "Mercado Livre",
+      "url": "",
+      "verification_status": "secondary_unverified"
+    },
+    {
+      "record_date": "2026-11-08",
+      "model": "Galaxy Tab S11",
+      "capacity_gb": "256",
+      "connectivity": "Wi-Fi",
+      "value_brl": "6100.00",
+      "source": "Ponto",
+      "url": "",
+      "verification_status": "secondary_unverified"
+    },
+    {
+      "record_date": "2026-11-08",
+      "model": "Galaxy Tab S11",
+      "capacity_gb": "256",
+      "connectivity": "Wi-Fi",
+      "value_brl": "6777.78",
+      "source": "Carrefour",
+      "url": "",
+      "verification_status": "secondary_unverified"
+    },
+    {
+      "record_date": "2026-11-08",
+      "model": "Galaxy Tab S10+",
+      "capacity_gb": "256",
+      "connectivity": "Wi-Fi",
+      "value_brl": "4799.00",
+      "source": "Amazon Retail / outros",
+      "url": "",
+      "verification_status": "secondary_unverified"
     }
   ],
   "summaries": [],
-  "updated": "2026-11-09T01:59:07.932009+00:00"
+  "updated": "2026-11-09T02:02:34.160900+00:00"
 }
