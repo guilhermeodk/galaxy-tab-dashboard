@@ -6,7 +6,7 @@
 </style></head><body><main>
 <h1>Galaxy Tab · Painel de preços</h1><p>Histórico de preços com fontes rastreáveis. <strong>Clique em qualquer ponto</strong> para abrir a referência da loja ou comparador em uma nova aba.</p>
 <div class="controls"><label>Modelo / capacidade <select id="sku"><option value="">Todos os modelos</option></select></label><span class="pill">Alerta S11: abaixo de R$ 3.800</span></div>
-<section class="card"><h2>Ofertas observadas por loja</h2><p class="muted">Cada ponto representa um anúncio observado. Preços preliminares não são preços finais garantidos.</p><div id="offersGraph"></div><div id="offersTip" class="tip">Selecione um ponto para ver loja, data e preço; clique para abrir a fonte.</div></section>
+<section class="card"><h2>Todos os preços já rastreados</h2><p class="muted">Reúne ofertas observadas e referências históricas em um único gráfico. Os pontos não equivalem necessariamente a ofertas disponíveis hoje; cada um abre sua fonte.</p><div id="combinedGraph"></div><div id="combinedTip" class="tip">Clique em um ponto para abrir a fonte. Consulte o status de verificação na tabela.</div></section><section class="card"><h2>Ofertas observadas por loja</h2><p class="muted">Cada ponto representa um anúncio observado. Preços preliminares não são preços finais garantidos.</p><div id="offersGraph"></div><div id="offersTip" class="tip">Selecione um ponto para ver loja, data e preço; clique para abrir a fonte.</div></section>
 <section class="card"><h2>Histórico externo</h2><p class="muted">Pontos isolados de fontes históricas; não representam uma série contínua. Algumas fontes são comparadores, não anúncios diretos da loja.</p><div id="externalGraph"></div><div id="externalTip" class="tip">Passe o mouse ou toque em um ponto para identificar a fonte. Clique para abrir.</div></section>
 <section class="card"><h2>Histórico próprio: mínimo, média e máximo</h2><p class="muted">Faixa entre mínimo e máximo, com média central. Somente amostras verificadas e comparáveis.</p><div id="summaryGraph"></div><div id="summaryTip" class="tip">Clique nos pontos para ver os links das ofertas que compõem a amostra.</div></section>
 <section class="card"><h2>Fontes e ofertas</h2><div class="scroll"><table><thead><tr><th>Data</th><th>Modelo</th><th>Fonte</th><th>Preço</th><th>Condição</th></tr></thead><tbody id="sourceRows"></tbody></table></div></section>
@@ -49,7 +49,10 @@ function draw(target,tipId,rows,type){
 function render(){
  const filter=$('sku').value;
  const offers=DATA.offers.filter(r=>!filter||sku(r)===filter),external=DATA.external.filter(r=>!filter||sku(r)===filter),summaries=DATA.summaries.filter(r=>!filter||sku(r)===filter);
- draw('offersGraph','offersTip',offers.map(r=>({date:r.observed_at_brt,sku:sku(r),value:r.price_brl,store:r.store,url:r.url})),'offer');
+ const observedPoints=offers.map(r=>({date:r.observed_at_brt,sku:sku(r),value:r.price_brl,store:r.store+' (observado; '+r.verification_status+')',url:r.url}));
+ const historicalPoints=external.map(r=>({date:r.record_date,sku:sku(r),value:r.value_brl,store:r.source+' (histórico; '+r.verification_status+')',url:r.url}));
+ draw('combinedGraph','combinedTip',[...observedPoints,...historicalPoints],'combined');
+ draw('offersGraph','offersTip',observedPoints,'offer');
  draw('externalGraph','externalTip',external.map(r=>({date:r.record_date,sku:sku(r),value:r.value_brl,store:r.source,url:r.url})),'external');
  draw('summaryGraph','summaryTip',summaries.map(r=>({date:r.observed_at_brt,sku:sku(r),value:r.mean_brl,low:r.min_brl,high:r.max_brl,store:'Média de '+r.n_offers+' ofertas',urls:DATA.offers.filter(o=>o.observed_at_brt===r.observed_at_brt&&sku(o)===sku(r)&&['verified','verified_comparable'].includes(o.verification_status)).map(o=>o.url)})),'summary');
  const body=$('sourceRows');body.replaceChildren();
