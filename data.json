@@ -1,0 +1,108 @@
+{
+  "offers": [
+    {
+      "observed_at_brt": "2026-11-08T20:55:17-03:00",
+      "model": "Galaxy Tab S11",
+      "capacity_gb": "256",
+      "connectivity": "Wi-Fi",
+      "price_brl": "5799.00",
+      "store": "Vivo Store",
+      "url": "https://store.vivo.com.br/tablet-samsung-galaxy-tab-s11-tela-11-wi-fi-cinza-12gb-ram-256gb-android-cam-traseira-13-mp-frontal-12mp/p/22024288",
+      "verification_status": "preliminary_unverified"
+    },
+    {
+      "observed_at_brt": "2026-11-08T20:55:17-03:00",
+      "model": "Galaxy Tab S11",
+      "capacity_gb": "256",
+      "connectivity": "Wi-Fi",
+      "price_brl": "5579.10",
+      "store": "Magazine Luiza",
+      "url": "https://www.magazineluiza.com.br/busca/tab%2Bs11%2Bwifi%2Bcinza/",
+      "verification_status": "preliminary_unverified"
+    }
+  ],
+  "external": [
+    {
+      "record_date": "2026-10-29",
+      "model": "Galaxy Tab S10 FE",
+      "capacity_gb": "128",
+      "connectivity": "Wi-Fi",
+      "value_brl": "2915.64",
+      "source": "Poupano",
+      "url": "https://www.poupano.com.br/produtos/galaxy-tab-s10-fe-wifi-128gb",
+      "verification_status": "secondary_unverified"
+    },
+    {
+      "record_date": "2026-10-29",
+      "model": "Galaxy Tab S10 FE",
+      "capacity_gb": "128",
+      "connectivity": "Wi-Fi",
+      "value_brl": "4415.08",
+      "source": "Poupano",
+      "url": "https://www.poupano.com.br/produtos/galaxy-tab-s10-fe-wifi-128gb",
+      "verification_status": "secondary_unverified"
+    },
+    {
+      "record_date": "2026-10-25",
+      "model": "Galaxy Tab S10+",
+      "capacity_gb": "256",
+      "connectivity": "Wi-Fi",
+      "value_brl": "4539.05",
+      "source": "VazaPromo",
+      "url": "https://vazapromo.com.br/produto/galaxy-tab-s10-plus",
+      "verification_status": "secondary_unverified"
+    },
+    {
+      "record_date": "2026-10-29",
+      "model": "Galaxy Tab S10+",
+      "capacity_gb": "256",
+      "connectivity": "Wi-Fi",
+      "value_brl": "4559",
+      "source": "VazaPromo",
+      "url": "https://vazapromo.com.br/produto/galaxy-tab-s10-plus",
+      "verification_status": "secondary_unverified"
+    },
+    {
+      "record_date": "2026-10-16",
+      "model": "Galaxy Tab S11",
+      "capacity_gb": "256",
+      "connectivity": "Wi-Fi",
+      "value_brl": "5149.9",
+      "source": "RedeAchados",
+      "url": "https://redeachados.com.br/achado/samsung-tablet-galaxy-tab-s11-wifi-256gb-12gb-ram-tela-11-galaxy-ai-s-pen-e-capa/",
+      "verification_status": "secondary_unverified"
+    },
+    {
+      "record_date": "2026-10-24",
+      "model": "Galaxy Tab S11",
+      "capacity_gb": "256",
+      "connectivity": "Wi-Fi",
+      "value_brl": "5550.76",
+      "source": "RedeAchados",
+      "url": "https://redeachados.com.br/achado/samsung-tablet-galaxy-tab-s11-wifi-256gb-12gb-ram-tela-11-galaxy-ai-s-pen-e-capa/",
+      "verification_status": "secondary_unverified"
+    },
+    {
+      "record_date": "2026-09-25",
+      "model": "Galaxy Tab S11",
+      "capacity_gb": "256",
+      "connectivity": "Wi-Fi",
+      "value_brl": "4919.1",
+      "source": "Tecnoblog",
+      "url": "https://tecnoblog.net/achados/galaxy-tab-s11-256-gb-para-jogos-tem-34-off-com-cupom/",
+      "verification_status": "secondary_unverified"
+    },
+    {
+      "record_date": "2026-11-02",
+      "model": "Galaxy Tab S10 FE",
+      "capacity_gb": "128",
+      "connectivity": "Wi-Fi",
+      "value_brl": "2799",
+      "source": "Primeira Solução",
+      "url": "https://primeirasolucao.com.br/produto/tablet-samsung-galaxy-tab-s10-fe-wifi-128gb-8gb-tela-10-9-90hz-s-pen-e-capa-inclusas-cinza",
+      "verification_status": "secondary_unverified"
+    }
+  ],
+  "summaries": [],
+  "updated": "2026-11-09T01:46:47.947831+00:00"
+}
