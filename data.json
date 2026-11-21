@@ -4818,6 +4818,160 @@
       "source_family": "retailer",
       "link_type": "source",
       "bundle_status": "not_confirmed"
+    },
+    {
+      "observed_at_brt": "2026-11-21T00:19:06-03:00",
+      "model": "Galaxy Tab S11",
+      "capacity_gb": "256",
+      "connectivity": "Wi-Fi",
+      "condition": "new",
+      "price_brl": "5889.05",
+      "store": "Magazine Luiza",
+      "seller": "Magazine Luiza",
+      "url": "https://www.buscape.com.br/tablet-ipad/tablet-samsung-galaxy-tab-s11-11-wi-fi-256gb-12-gb-sm-x730n",
+      "payment": "at sight as published by Buscape; checkout unverified",
+      "stock": "",
+      "cashback_program": "",
+      "cashback_pct": "",
+      "cashback_eligible": "",
+      "cashback_brl": "",
+      "effective_price_brl": "",
+      "verification_status": "preliminary_unverified",
+      "source_family": "buscape_catalog",
+      "link_type": "comparator",
+      "bundle_status": "not_confirmed"
+    },
+    {
+      "observed_at_brt": "2026-11-21T00:19:06-03:00",
+      "model": "Galaxy Tab S11",
+      "capacity_gb": "256",
+      "connectivity": "Wi-Fi",
+      "condition": "new",
+      "price_brl": "11595.00",
+      "store": "Amazon",
+      "seller": "Amazon",
+      "url": "https://www.buscape.com.br/tablet-ipad/tablet-samsung-galaxy-tab-s11-11-wi-fi-256gb-12-gb-sm-x730n",
+      "payment": "at sight as published by Buscape; checkout unverified",
+      "stock": "",
+      "cashback_program": "",
+      "cashback_pct": "",
+      "cashback_eligible": "",
+      "cashback_brl": "",
+      "effective_price_brl": "",
+      "verification_status": "preliminary_unverified",
+      "source_family": "buscape_catalog",
+      "link_type": "comparator",
+      "bundle_status": "not_confirmed"
+    },
+    {
+      "observed_at_brt": "2026-11-21T00:19:06-03:00",
+      "model": "Galaxy Tab S11",
+      "capacity_gb": "256",
+      "connectivity": "Wi-Fi",
+      "condition": "not_confirmed",
+      "price_brl": "6117.90",
+      "store": "Magazine Luiza",
+      "seller": "Magazine Luiza",
+      "url": "https://www.buscape.com.br/lead?oid=1582132961",
+      "payment": "",
+      "stock": "",
+      "cashback_program": "Buscape advertised (eligibility unverified)",
+      "cashback_pct": "1.00",
+      "cashback_eligible": "unverified",
+      "cashback_brl": "61.18",
+      "effective_price_brl": "",
+      "verification_status": "preliminary_unverified",
+      "source_family": "buscape_standalone",
+      "link_type": "comparator",
+      "bundle_status": "not_confirmed"
+    },
+    {
+      "observed_at_brt": "2026-11-21T00:19:06-03:00",
+      "model": "Galaxy Tab S11",
+      "capacity_gb": "256",
+      "connectivity": "Wi-Fi",
+      "condition": "not_confirmed",
+      "price_brl": "5599.00",
+      "store": "Amazon",
+      "seller": "Amazon",
+      "url": "https://www.buscape.com.br/lead?oid=1581081168",
+      "payment": "",
+      "stock": "",
+      "cashback_program": "",
+      "cashback_pct": "",
+      "cashback_eligible": "",
+      "cashback_brl": "",
+      "effective_price_brl": "",
+      "verification_status": "preliminary_unverified",
+      "source_family": "buscape_standalone",
+      "link_type": "comparator",
+      "bundle_status": "not_confirmed"
+    },
+    {
+      "observed_at_brt": "2026-11-21T00:19:06-03:00",
+      "model": "Galaxy Tab S11",
+      "capacity_gb": "256",
+      "connectivity": "Wi-Fi",
+      "condition": "not_confirmed",
+      "price_brl": "5889.05",
+      "store": "Magazine Luiza",
+      "seller": "",
+      "url": "https://www.magazineluiza.com.br/tablet-samsung-galaxy-tab-s11-wifi-256gb-12gb-ram-tela-11-galaxy-ai-s-pen-e-capa-teclado-inclusas/p/dbec06kgec/tb/sams/",
+      "payment": "PIX (advertised price)",
+      "stock": "",
+      "cashback_program": "",
+      "cashback_pct": "",
+      "cashback_eligible": "",
+      "cashback_brl": "",
+      "effective_price_brl": "",
+      "verification_status": "preliminary_unverified",
+      "source_family": "retailer",
+      "link_type": "source",
+      "bundle_status": "possible_bundle"
+    },
+    {
+      "observed_at_brt": "2026-11-21T00:19:06-03:00",
+      "model": "Galaxy Tab S11",
+      "capacity_gb": "256",
+      "connectivity": "Wi-Fi",
+      "condition": "not_confirmed",
+      "price_brl": "6117.90",
+      "store": "Magazine Luiza",
+      "seller": "",
+      "url": "https://www.magazineluiza.com.br/tablet-galaxy-tab-s11-11-samsung-256gb-wi-fi-cinza/p/jabd1724kh/tb/sams/",
+      "payment": "PIX (advertised price)",
+      "stock": "",
+      "cashback_program": "",
+      "cashback_pct": "",
+      "cashback_eligible": "",
+      "cashback_brl": "",
+      "effective_price_brl": "",
+      "verification_status": "preliminary_unverified",
+      "source_family": "retailer",
+      "link_type": "source",
+      "bundle_status": "not_confirmed"
+    },
+    {
+      "observed_at_brt": "2026-11-21T00:19:06-03:00",
+      "model": "Galaxy Tab S11",
+      "capacity_gb": "256",
+      "connectivity": "Wi-Fi",
+      "condition": "not_confirmed",
+      "price_brl": "6999.99",
+      "store": "Magazine Luiza",
+      "seller": "",
+      "url": "https://www.magazineluiza.com.br/tablet-samsung-galaxy-tab-s11-sm-x730-wi-fi-11-12gb-ram-256gb-cinza/p/eceaek503c/tb/sams/",
+      "payment": "PIX (advertised price)",
+      "stock": "",
+      "cashback_program": "",
+      "cashback_pct": "",
+      "cashback_eligible": "",
+      "cashback_brl": "",
+      "effective_price_brl": "",
+      "verification_status": "preliminary_unverified",
+      "source_family": "retailer",
+      "link_type": "source",
+      "bundle_status": "not_confirmed"
     }
   ],
   "external": [
@@ -5652,6 +5806,24 @@
         "https://www.buscape.com.br/tablet-ipad/tablet-samsung-galaxy-tab-s11-11-wi-fi-256gb-12-gb-sm-x730n"
       ],
       "source": "buscape"
+    },
+    {
+      "observed_at_brt": "2026-11-21T00:19:06-03:00",
+      "model": "Galaxy Tab S11",
+      "capacity_gb": "256",
+      "connectivity": "Wi-Fi",
+      "n_offers": 2,
+      "min_brl": 5889.05,
+      "mean_brl": 8742.02,
+      "max_brl": 11595.0,
+      "stores": [
+        "Amazon",
+        "Magazine Luiza"
+      ],
+      "urls": [
+        "https://www.buscape.com.br/tablet-ipad/tablet-samsung-galaxy-tab-s11-11-wi-fi-256gb-12-gb-sm-x730n"
+      ],
+      "source": "buscape"
     }
   ],
   "retailer_summary": [
@@ -6090,10 +6262,27 @@
         "https://www.magazineluiza.com.br/tablet-samsung-galaxy-tab-s11-wifi-256gb-12gb-ram-tela-11-galaxy-ai-s-pen-e-capa-teclado-inclusas/p/dbec06kgec/tb/sams/"
       ],
       "source": "retailer"
+    },
+    {
+      "observed_at_brt": "2026-11-21T00:19:06-03:00",
+      "model": "Galaxy Tab S11",
+      "capacity_gb": "256",
+      "connectivity": "Wi-Fi",
+      "n_offers": 1,
+      "min_brl": 5889.05,
+      "mean_brl": 5889.05,
+      "max_brl": 5889.05,
+      "stores": [
+        "Magazine Luiza"
+      ],
+      "urls": [
+        "https://www.magazineluiza.com.br/tablet-samsung-galaxy-tab-s11-wifi-256gb-12gb-ram-tela-11-galaxy-ai-s-pen-e-capa-teclado-inclusas/p/dbec06kgec/tb/sams/"
+      ],
+      "source": "retailer"
     }
   ],
-  "last_collection": "2026-11-20T18:53:38-03:00",
-  "last_observation": "2026-11-20T18:53:38-03:00",
+  "last_collection": "2026-11-21T00:19:06-03:00",
+  "last_observation": "2026-11-21T00:19:06-03:00",
   "active_skus": [
     "Galaxy Tab S11 256 GB"
   ],
@@ -6288,6 +6477,6 @@
     "ends_at": "2026-11-27T23:59:59-03:00",
     "stale_after_hours": 4
   },
-  "updated": "2026-11-20T21:54:00.501219+00:00",
-  "published_at": "2026-11-20T21:54:19.733309+00:00"
+  "updated": "2026-11-21T03:19:23.322811+00:00",
+  "published_at": "2026-11-21T03:19:40.200428+00:00"
 }
